@@ -1,0 +1,28 @@
+<!-- Reusable template for a newsletter opt-in -->
+<section class="section">
+  <div class="container--sm">
+    <h2 class="newsletter-header">
+      {{- with .Site.Params.newsletter_header -}}
+        {{- . -}}
+      {{- else -}}
+        Join Our Telegram Channel
+      {{- end -}}
+    </h2>
+    <p class="newsletter-desc">
+      {{- with .Site.Params.newsletter_description -}}
+        {{- . -}}
+      {{- else -}}
+        Stay updated by joining our Telegram channel.
+      {{- end -}}
+    </p>
+    <form id="newsletter-form" name="newsletter" action="{{ .Site.Params.telegram_link }}" target="_blank">
+      <button type="submit" id="newsletter-form--submit" class="btn-primary">
+        {{- with .Site.Params.newsletter_submit -}}
+          {{- . -}}
+        {{- else -}}
+          Subscribe
+        {{- end -}}
+      </button>
+    </form>
+  </div>
+</section>
